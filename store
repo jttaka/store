@@ -1,0 +1,25 @@
+#!/bin/bash
+
+DEV="/dev/[YOURDRIVE]"
+MNT="/home/[YOUR-USER-NAME]storage"
+
+if mountpoint -q "$MNT"; then
+    # Attempt to unmount
+    if output=$(sudo umount "$MNT" 2>&1); then
+        rmdir "$MNT"               # remove folder when unmounted
+        notify-send "Storage" "Unmounted"
+    else
+        notify-send "Storage Error" "Failed to unmount: $output"
+    fi
+else
+    # Attempt to mount
+    mkdir -p "$MNT"                # create folder only when mounting
+    if output=$(sudo mount "$DEV" "$MNT" 2>&1); then
+        sudo chown "$USER:$USER" "$MNT"
+        notify-send "Storage" "Mounted"
+    else
+        rmdir "$MNT" 2>/dev/null  # remove folder if mount fails
+        notify-send "Storage Error" "Failed to mount: $output"
+    fi
+fi
+
