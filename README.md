@@ -1,10 +1,10 @@
 # store
-A small fun script that you can modify to your liking.
+A small fun script for easy access to internal drives. Modify this script to your liking.
 
-requirements:
+Requirements:
 dunst
 
-install dunst:
+Install dunst:
 Arch:
 ```bash
 sudo pacman -S dunst
