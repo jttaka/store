@@ -6,9 +6,9 @@ dunst
 
 install dunst:
 Arch:
-¨¨¨bash
+´´´bash
 sudo pacman -S dunst
-¨¨¨
+´´´
 Debian:
 ¨¨¨bash
 sudo apt install dunst
