@@ -6,17 +6,16 @@ dunst
 
 install dunst:
 Arch:
-´´´bash
+```bash
 sudo pacman -S dunst
-´´´
+```
 Debian:
-¨¨¨bash
+```bash
 sudo apt install dunst
-¨¨¨
-
-Make sure to change [YOURDRIVE] and [YOUR-USER-NAME]
-to your drives name and your user name in the store file:
-¨¨¨bash
+```
+MMake sure to change [YOURDRIVE] and [YOUR-USER-NAME]
+to your drives name and your user name in the store file
+```bash
 DEV="/dev/[YOURDRIVE]"
 MNT="/home/[YOUR-USER-NAME]storage"
-¨¨¨
+```
